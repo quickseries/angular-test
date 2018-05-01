@@ -15,7 +15,11 @@ app.set('view options', {
 
 // App setup environment port
 app.set('port', process.env.PORT);
-app.use(express.static(`${__dirname}/client/dist/`, config.staticResourceCache));
+
+
+// There's a problem with config.staticResourceCache - doesn't work
+//app.use(express.static(`${__dirname}/client/dist/`, config.staticResourceCache));
+app.use(express.static(`${__dirname}/client/dist/`));
 
 require('./routes.js')(app);
 
@@ -27,4 +31,3 @@ if (require.main === module) {
 }
 
 module.exports = app;
-//test 1
