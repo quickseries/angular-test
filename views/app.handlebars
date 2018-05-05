@@ -1,1 +1,67 @@
-<app></app>
+<app ng-app="myApp" ng-controller="myCtrl">
+
+    <script>
+    </script>
+
+    <form class="form-horizontal" name="temperatureForm" novalidate>
+        <fieldset>
+            <legend>Temperature</legend>
+
+            <!--Input Data-->
+            <div class="form-group col-md-12" ng-class="{'has-error': temperatureForm.inputTemNumber.$invalid &&
+                                                temperatureForm.inputTemNumber.$dirty}">
+                <div class="col-md-4">
+                    <input class="form-control" id="inputTemNumber" name="inputTemNumber" type="text" placeholder="temperature(required )"
+                           ng-model="temp" required />
+                </div>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="insertTemp(temp,temperatureForm.$valid)">
+                        ADD
+                    </button>
+                </span>
+            </div>
+
+            <div class="col-md-12">
+                <span ng-show="temperatureForm.inputTemNumber.$error.required">
+                    Product name is required
+                </span>
+            </div>
+
+            <!--Statistic-->
+            <div class="col-md-12">
+                <div class="col-md-3">Average:<label ng-bind="averageResult| number : 1"></label>°c</div>
+                <div class="col-md-3">Highest:<label ng-bind="highestResult| number : 1"></label>°c</div>
+                <div class="col-md-3">Lowest:<label ng-bind="lowestResult| number : 1"></label> °c</div>
+                <div class="col-md-3">MedianResult:<label ng-bind="medianResult| number : 1"></label>:°c</div>
+            </div>
+
+            <!--Table-->
+            <div class="panel panel-danger">
+                <div class="panel-heading" style="font-size:large">Temperature Log:
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Temperature</td>
+                            <td>
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="info in information">
+                            <td><label  ng-bind="info.date| date:'dd.MM.y'"></label></td>
+                            <td><label  ng-bind="info.temperature"></label>°c</td>
+                            <td>
+                                <button type="button" class="btn btn-danger" ng-click="delete($index)">Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</app>

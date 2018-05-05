@@ -10,12 +10,12 @@ const app = express();
 app.engine('handlebars', hdb.engine);
 app.set('view engine', 'handlebars');
 app.set('view options', {
-  layout: 'main.handlebars',
+  layout: 'main.handlebars'
 });
 
 // App setup environment port
 app.set('port', process.env.PORT);
-app.use(express.static(`${__dirname}/client/dist/`, config.staticResourceCache));
+app.use(express.static(`${__dirname}/client/dist/`, config));
 
 require('./routes.js')(app);
 
