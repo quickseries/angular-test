@@ -15,7 +15,7 @@ app.set('view options', {
 
 // App setup environment port
 app.set('port', process.env.PORT);
-app.use(express.static(`${__dirname}/client/dist/`, config.staticResourceCache));
+app.use(express.static(`${__dirname}/client/dist/`, config));
 
 require('./routes.js')(app);
 
