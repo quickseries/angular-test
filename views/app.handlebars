@@ -1,11 +1,12 @@
 <app ng-app="myApp" ng-controller="myCtrl">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <script>
     </script>
 
     <form class="form-horizontal" name="temperatureForm" novalidate>
         <fieldset>
             <legend>Temperature</legend>
+
             <!--Input Data-->
             <div class="form-group col-md-12" ng-class="{'has-error': temperatureForm.inputTemNumber.$invalid &&
                                                 temperatureForm.inputTemNumber.$dirty}">
@@ -25,6 +26,7 @@
                     Product name is required
                 </span>
             </div>
+
             <!--Statistic-->
             <div class="col-md-12">
                 <div class="col-md-3">Average:<label ng-bind="averageResult| number : 1"></label>°c</div>
