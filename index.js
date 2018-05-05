@@ -10,7 +10,7 @@ const app = express();
 app.engine('handlebars', hdb.engine);
 app.set('view engine', 'handlebars');
 app.set('view options', {
-  layout: 'main.handlebars',
+  layout: 'main.handlebars'
 });
 
 // App setup environment port
