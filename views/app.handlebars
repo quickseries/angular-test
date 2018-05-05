@@ -9,35 +9,46 @@
 
             //data
             $scope.information = [{
-                date: '2018-02-01',
-                temperature: '40'
-            },
-            {
-                date: '2018-02-01',
-                temperature: '8'
-            },
-            {
-                date: '2018-02-01',
-                temperature: '0'
-            },
-            {
-                date: '2018-02-01',
-                temperature: '10'
-            }
+                    date: '2018-02-01',
+                    temperature: '40'
+                },
+                {
+                    date: '2018-02-01',
+                    temperature: '8'
+                },
+                {
+                    date: '2018-02-01',
+                    temperature: '0'
+                },
+                {
+                    date: '2018-02-01',
+                    temperature: '10'
+                }
             ];
+
+            //ADD
+            $scope.insertTemp = function (temp){
+                    $scope.information.push({date:new Date(),temperature:temp});
+                    console.log("====="+temp);
+                    console.dir($scope.information);
+            }
+
+
         });
     </script>
 
     <body>
 
-        <div >
-            Name:
-            <input ng-model="temp">
+    <!--Input Data-->
+    <div class="form-group col-md-12" >
+        <div class="col-md-4">
+            <input class="form-control" id="inputTemNumber" name="inputTemNumber" type="text" placeholder="temperature(required )"
+                   ng-model="temp" required />
         </div>
-
-
-
-        <p>Use the ng-model directive to bind the value of the input field to a property made in the controller.</p>
-
-
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="insertTemp(temp)">
+                    ADD
+                </button>
+            </span>
+    </div>
 </app>
