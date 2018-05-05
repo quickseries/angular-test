@@ -47,6 +47,7 @@
                 for (let index = 0; index < array.length; index++) {
                     sum += array[index];
                 }
+                console.log(sum / array.length);
                 return sum / array.length;
             }
 
@@ -58,6 +59,7 @@
                         max = array[index];
                     }
                 }
+                console.log(max);
                 return max;
             }
 
@@ -69,6 +71,7 @@
                         min = array[item];
                     }
                 }
+                console.log(min);
                 return min;
             }
 
@@ -80,9 +83,15 @@
                 var half = Math.floor(array.length / 2);
 
                 if (array.length % 2)
+                {
+                    console.log(array[half]);
                     return array[half];
-                else
+                }
+                else{
+                    console.log((array[half - 1] + array[half]) / 2.0);
                     return (array[half - 1] + array[half]) / 2.0;
+                }
+
             }
 
             $scope.createArrayTemperature = function (arr) {
@@ -133,6 +142,13 @@
             <span ng-show="temperatureForm.inputTemNumber.$error.required">
                 Product name is required
             </span>
+        </div>
+        <!--Statistic-->
+        <div class="col-md-12">
+            <div class="col-md-3">Average:<label ng-bind="averageResult| number : 1"></label>°c</div>
+            <div class="col-md-3">Highest:<label ng-bind="highestResult| number : 1"></label>°c</div>
+            <div class="col-md-3">Lowest:<label ng-bind="lowestResult| number : 1"></label> °c</div>
+            <div class="col-md-3">MedianResult:<label ng-bind="medianResult| number : 1"></label>:°c</div>
         </div>
     </form>
 </app>
