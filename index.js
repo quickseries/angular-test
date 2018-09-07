@@ -15,7 +15,8 @@ app.set('view options', {
 
 // App setup environment port
 app.set('port', process.env.PORT);
-app.use(express.static(`${__dirname}/client/dist/`, config.staticResourceCache));
+//render angular instead ! <3
+app.use(express.static(`${__dirname}/angular/weather-app/dist/`));
 
 require('./routes.js')(app);
 
