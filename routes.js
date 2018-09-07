@@ -1,5 +1,7 @@
-module.exports = (app) => {
-  app.get(['/', '/*'], (req, res) => {
-    res.render('app');
+module.exports = (router) => {
+
+  router.get('/api/weather',(req, res)=>{
+    res.json('bob');
   });
+
 };
