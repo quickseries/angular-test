@@ -1,7 +1,11 @@
-module.exports = (router) => {
+module.exports = () => {
+
+  let express = require('express');
+  let router = express.Router();
 
   router.get('/api/weather',(req, res)=>{
-    res.json('bob');
+    console.log('/api/weather');
+    res.json('weather infos test');
   });
 
 };

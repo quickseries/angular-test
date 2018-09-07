@@ -5,23 +5,18 @@ const config = require('./config.js')[ENV];
 // const handlebarsConfig = require('./handlebars-config.js');
 // const hdb = require('express-handlebars').create(handlebarsConfig.handlebars);
 
-const router = express.Router();
-
-
 const app = express();
 
-// app.engine('handlebars', hdb.engine);
-// app.set('view engine', 'handlebars');
-// app.set('view options', {
-//   layout: 'main.handlebars',
-// });
+let routes = require('./routes');
 
 // App setup environment port
 app.set('port', process.env.PORT);
 //render angular instead ! <3
 app.use(express.static(`${__dirname}/client/dist/`));
 
-require('./routes.js')(router);
+app.use('/', routes);
+
+// require('./routes.js')(router);
 
 // start the server in cluster
 if (require.main === module) {
