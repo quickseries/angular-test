@@ -23,7 +23,8 @@ import {
   MatChipsModule,
   MatProgressBarModule,
   MatDividerModule,
-  MatTableModule
+  MatTableModule,
+  MatDatepickerModule
 } from '@angular/material';
 
 import { CdkTableModule } from '@angular/cdk/table';
@@ -52,7 +53,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatProgressBarModule,
     MatDividerModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MatDatepickerModule
   ],
   exports: [
     MatButtonModule,
@@ -77,7 +79,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatProgressBarModule,
     MatDividerModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MatDatepickerModule
   ],
   declarations: [
 

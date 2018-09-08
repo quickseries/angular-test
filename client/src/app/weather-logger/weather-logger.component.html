@@ -1,2 +1,28 @@
 <wl-header></wl-header>
+
+<div class="wl-input">
+
+
+  <form class="add-weather-entry-form">
+
+    <wl-datepicker ></wl-datepicker>
+
+    <mat-form-field class="example-full-width">
+
+      <input matInput placeholder="Temperature" type="number" class="example-right-align">
+      <span matSuffix>Celsius</span>
+
+      <mat-error *ngIf="temperatureFormControl.hasError('required')">
+        This field is required
+      </mat-error>
+
+      <mat-error *ngIf="isNumeric === false">
+        Please enter a numeric value.
+      </mat-error>
+
+    </mat-form-field>
+  </form>
+
+</div>
+
 <!--rest of ui here-->

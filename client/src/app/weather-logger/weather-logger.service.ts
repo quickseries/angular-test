@@ -55,4 +55,11 @@ export class WeatherLoggerService {
       });
   };
 
+
+  //MOCK DATA
+
+  weather_data = [
+    {date:'',temperature:0}
+  ]
+
 }

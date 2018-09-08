@@ -5,7 +5,12 @@ import { MaterialModule } from '../material/material.module';
 import { HeaderComponent } from './header/header.component';
 import { WeatherLoggerService } from './weather-logger.service';
 import { HttpQueryService } from './http-query.service';
+
 import { WeatherLoggerComponent } from './weather-logger.component';
+import { TableComponent } from './table/table.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+
+import { MatMomentDateModule } from '@angular/material-moment-adapter'
 
 //http
 import {HttpClientModule} from '@angular/common/http';
@@ -13,14 +18,19 @@ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    MatMomentDateModule,
   ],
   declarations: [
     WeatherLoggerComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableComponent,
+    DatepickerComponent
   ],
   exports:[
-    WeatherLoggerComponent
+    WeatherLoggerComponent,
+    TableComponent,
+    DatepickerComponent
   ],
   providers: [
     WeatherLoggerService,
